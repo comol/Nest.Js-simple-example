@@ -20,7 +20,42 @@ export class UsersService {
         return  User.findOne({where:{username: exLoginDto.login, password: exLoginDto.password}});
     }
 
-    async findAll(): Promise<User[]> {
-        return User.findAll<User>();
+    async updateUserPermission(id: number, exUserDto: ExUserDto) {
+        return User.update(
+            { permission: exUserDto.permission },
+            { where: { _id: id } }
+        );
+    }
+
+    async getUsers(): Promise<User[]> {
+        return User.findAll<User>() ;
+    }
+
+    async saveUserImage(id: number) {
+        return '';
+    }
+
+    async deleteUser(id: number) {
+        let user:User = await User.findByPk(id);
+        await user.destroy();
+    }
+
+    async updateUser(id: number, updateUserDto: ExUserDto) {
+        await User.update(
+            { permission: updateUserDto.permission,
+                    firstname: updateUserDto.firstName,
+                    img: updateUserDto.img,
+                    middleName: updateUserDto.middleName,
+                    password: updateUserDto.password,
+                    surName: updateUserDto.surName,
+                    username: updateUserDto.username
+                    },
+            { where: { _id: id } }
+        );
+        return User.findByPk(id);
+    }
+
+    async authFromToken(createLoginDto: ExLoginDto) {
+        return undefined;
     }
 }
