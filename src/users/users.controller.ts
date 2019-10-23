@@ -1,32 +1,46 @@
-import { Controller, Get, Post, Put, Body, Param, Delete } from '@nestjs/common';
+import {
+    Controller,
+    Get,
+    Post,
+    Put,
+    Body,
+    Param,
+    Delete,
+    ValidationPipe,
+    Header,
+    UploadedFile,
+    UseInterceptors,
+    UploadedFiles,
+
+} from '@nestjs/common';
 import { ExUserDto } from './dto/ex-user.dto';
-import { ExLoginDto } from './dto/ex-login.dto';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
+import {FileInterceptor, FilesInterceptor} from '@nestjs/platform-express';
+
 
 @Controller('api')
 export class UsersController {
     constructor(private readonly usersService: UsersService) {}
 
     @Post('saveNewUser')
-    async create(@Body() createUserDto: ExUserDto): Promise<User> {
-        return  this.usersService.create(createUserDto);
+    async create(@Body()  createUserDto: ExUserDto): Promise<ExUserDto> {
+        return await this.usersService.create(createUserDto);
     }
 
-    //TODO разобраться с авторизацией
     @Post('login')
-    async login(@Body() createLoginDto: ExLoginDto): Promise<User> {
+    async login(@Body() createLoginDto: ExUserDto): Promise<ExUserDto> {
         return  this.usersService.login(createLoginDto);
     }
 
     //TODO разобраться с авторизацией
     @Post('authFromToken')
-    async authFromToken(@Body() createLoginDto: ExLoginDto): Promise<User> {
+    async authFromToken(@Body() createLoginDto: ExUserDto): Promise<ExUserDto> {
         return  this.usersService.authFromToken(createLoginDto);
     }
 
     @Put('updateUser/:id')
-    async updateUser(@Param('id') id, @Body() updateUserDto: ExUserDto): Promise<User> {
+    async updateUser(@Param('id') id, @Body() updateUserDto: ExUserDto): Promise<ExUserDto> {
         return this.usersService.updateUser(id, updateUserDto);
     }
 
@@ -36,19 +50,21 @@ export class UsersController {
     }
 
     //TODO - Сохранение иозображений как с фронта получаются изображения
+    @UseInterceptors(FileInterceptor('files'))
     @Post('saveUserImage/:id')
-    async saveUserImage(@Param('id') id): Promise<string> {
-        return  this.usersService.saveUserImage(id);
+    async saveUserImage(@UploadedFile() files, @Param('id') id): Promise<string> {
+
+        return  this.usersService.saveUserImage(id, files);
     }
 
     @Get('getUsers')
-    async getUsers(): Promise<User[]> {
+    async getUsers(): Promise<ExUserDto[]> {
         return  this.usersService.getUsers();
     }
 
     @Put('updateUserPermission/:id')
-    async updateUserPermission(@Param('id') id, @Body() createUserDto: ExUserDto) {
-        await this.usersService.updateUserPermission(id, createUserDto);
+    async updateUserPermission(@Param('id') id, @Body() createUserDto: ExUserDto):Promise<ExUserDto> {
+        return this.usersService.updateUserPermission(id, createUserDto);
     }
 
 

@@ -8,22 +8,22 @@ export class NewsController {
     constructor(private readonly newsService: NewsService) {}
 
     @Post('newNews')
-    async create(@Body() createUserDto: ExNewsDto): Promise<News> {
-        return  this.newsService.create(createUserDto);
+    async create(@Body() createNewsDto: ExNewsDto): Promise<ExNewsDto[]> {
+        return  this.newsService.create(createNewsDto);
     }
 
     @Put('updateNews/:id')
-    async updateNews(@Param('id') id, @Body() updateNewsDto: ExNewsDto): Promise<News> {
+    async updateNews(@Param('id') id, @Body() updateNewsDto: ExNewsDto): Promise<ExNewsDto[]> {
         return this.newsService.updateNews(id, updateNewsDto);
     }
 
-    @Put('deleteNews/:id')
-    async deleteNews(@Param('id') id) {
-        await this.newsService.deleteNews(id);
+    @Delete('deleteNews/:id')
+    async deleteNews(@Param('id') id): Promise<ExNewsDto[]> {
+        return this.newsService.deleteNews(id);
     }
 
     @Get('getNews')
-    async getUsers(): Promise<News[]> {
+    async getNews(): Promise<ExNewsDto[]> {
         return  this.newsService.getNews();
     }
 

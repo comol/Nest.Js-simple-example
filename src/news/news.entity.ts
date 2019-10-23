@@ -3,25 +3,17 @@ import {json} from "sequelize";
 
 @Table
 export class News extends Model<News> {
-    @Column
-    username: string;
 
     @Column
-    password: number;
+    text: string;
 
     @Column
-    firstName: string;
+    theme: string;
 
     @Column
-    surName: string;
+    date: string;
 
     @Column
-    middleName: string;
-
-    @Column
-    img: string;
-
-    @Column
-    permission: string;
+    user: number;
 
 }

@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef94b95b-e11b-4388-a464-aeb3b91557a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/news/dto/news.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/news/news.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/news/news.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/news/news.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/news/news.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/events/events.gateway.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/events/events.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/database.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.provider.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/dto/news.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/dto/news.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/news.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/news.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/news.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/news.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/dto/ex-login.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/dto/ex-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/dto/ex-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/user.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.service.ts" afterDir="false" />
     </list>
@@ -41,9 +55,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Source\Repos\LearnNodeJS\Loft-homework-5\node_modules\prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\Admin\Source\Repos\LearnNodeJS\Loft-homework-5\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Source\Repos\LearnNodeJS\Loft-homework-5\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Source\Repos\LearnNodeJS\Loft-homework-5\src" />
     </key>
@@ -98,7 +116,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571073731028</updated>
-      <workItem from="1571073741408" duration="26274000" />
+      <workItem from="1571073741408" duration="30099000" />
+      <workItem from="1571637240117" duration="4652000" />
+      <workItem from="1571659145866" duration="12588000" />
+      <workItem from="1571695490565" duration="41504000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1571073825188</created>
@@ -121,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571441874203</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Base API methods">
+      <created>1571606518844</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571606518844</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +160,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -143,6 +173,56 @@
     <MESSAGE value="init" />
     <MESSAGE value="install nest js" />
     <MESSAGE value="users, login" />
-    <option name="LAST_COMMIT_MESSAGE" value="users, login" />
+    <MESSAGE value="Base API methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base API methods" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/users/users.controller.ts</url>
+          <line>56</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="dart-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="js.build_tools.npm">
+        <watch expression="createUserDto" />
+        <watch expression="@Body('data')" />
+        <watch expression="@Body()" />
+        <watch expression="ExUserDto" />
+        <watch expression="dd" />
+        <watch expression="createUserDto.__proto__[&quot;[[StableObjectId]]&quot;]" />
+        <watch expression="User.findOne({where:{username: exLoginDto.username, password: exLoginDto.password}})" />
+        <watch expression="exLoginDto" />
+        <watch expression="usr.dataValues" />
+        <watch expression="exNewsDto" />
+        <watch expression="News.findAll&lt;News&gt;()" />
+        <watch expression="User.findByPk(nw[i].user).then()" />
+        <watch expression="nwdto" />
+        <watch expression="id.toFixed()" />
+        <watch expression="Number(id)" />
+        <watch expression="usr:User = await User.update(&#10;            { permission: JSON.stringify(exUserDto.permission) }, //Permission в String&#10;            { where: { id: Number(id) } }&#10;        )" />
+        <watch expression="JSON.stringify(exUserDto.permission)" />
+        <watch expression="updateUserDto" language="TypeScript" />
+        <watch expression="client" />
+        <watch expression="client.server.httpServer.connections" />
+        <watch expression="JSON.stringify(this.HashObject)" />
+        <watch expression="this.HashObject" />
+        <watch expression="Server" language="TypeScript" />
+        <watch expression="Server" language="TypeScript" />
+        <watch expression="this.server.sockets[data[1]]" />
+        <watch expression="this.server" />
+        <watch expression="data[0]" />
+        <watch expression="this.server.sockets.connected[data[1]]" />
+        <watch expression="data[1]" />
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

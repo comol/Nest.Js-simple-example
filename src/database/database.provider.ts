@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { User } from '../users/user.entity';
+import { News } from '../news/news.entity';
 
 export const databaseProviders = [
     {
@@ -13,7 +14,7 @@ export const databaseProviders = [
                 password: 'postgres',
                 database: 'loft',
             });
-            sequelize.addModels([User]);
+            sequelize.addModels([User, News]);
             await sequelize.sync();
             return sequelize;
         },
