@@ -2,7 +2,6 @@ import { News } from './news.entity';
 import { ExNewsDto } from './dto/news.dto';
 import { User } from '../users/user.entity';
 
-
 export class NewsService {
 
 

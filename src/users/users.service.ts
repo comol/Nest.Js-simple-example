@@ -13,11 +13,14 @@ export class UsersService {
     constructor(
         private readonly jwtService: JwtService){}
 
+
+    // Преобразует из того что нужно в то что "хочет" фронт
     static transformuser(usr:User): ExUserDto
     {
         let exuser:ExUserDto = new ExUserDto();
         exuser.firstName = usr.firstName;
         exuser.img = usr.img;
+        exuser.image = usr.img;
         exuser.middleName = usr.middleName;
         exuser.password = usr.password;
         exuser.surName = usr.surName;
@@ -25,7 +28,8 @@ export class UsersService {
         exuser.id = usr.id;
         exuser.permission = JSON.parse(usr.permission);
         exuser.permissionId = usr.id;
-        exuser.access_token = "";
+        exuser.access_token = "123"; //Это просто заглушка - access token нужно вставлять не внутрь данных json, а в заголовки
+        // Но фронт "хочет" от нас access token внутри пользователя притом при его update...
         return exuser;
     }
 

@@ -6,21 +6,17 @@ import {
     Body,
     Param,
     Delete,
-    ValidationPipe,
-    Header,
     UploadedFile,
     UseInterceptors,
-    UploadedFiles,
-
 } from '@nestjs/common';
 import { ExUserDto } from './dto/ex-user.dto';
 import { UsersService } from './users.service';
-import { User } from './user.entity';
-import {FileInterceptor, FilesInterceptor} from '@nestjs/platform-express';
+import {FileInterceptor} from '@nestjs/platform-express';
 
 
 @Controller('api')
 export class UsersController {
+
     constructor(private readonly usersService: UsersService) {}
 
     @Post('saveNewUser')
@@ -49,11 +45,11 @@ export class UsersController {
     }
 
     //TODO - Сохранение иозображений как с фронта получаются изображения
-    @UseInterceptors(FileInterceptor('files'))
+    @UseInterceptors(FileInterceptor('file'))
     @Post('saveUserImage/:id')
-    async saveUserImage(@UploadedFile() files, @Param('id') id): Promise<string> {
+    async saveUserImage(@UploadedFile() file, @Param('id') id): Promise<string> {
 
-        return  this.usersService.saveUserImage(id, files);
+        return  this.usersService.saveUserImage(id, file);
     }
 
     @Get('getUsers')

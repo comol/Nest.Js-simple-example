@@ -15,7 +15,7 @@ import { EventsModule } from './events/events.module';
     rootPath: join(__dirname, '..', 'dist'),
   }), UsersModule, NewsModule, DatabaseModule,
     MulterModule.register({
-      dest: './dist/assets/img',
+      dest: './dist'
     }),
     EventsModule]
 })

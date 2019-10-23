@@ -7,7 +7,7 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.use(bodyParser.json({
         type: 'text/plain',
-        limit: '10000kb'
+        limit: '500mb'
     }));
     await app.listen(3000);
 }
