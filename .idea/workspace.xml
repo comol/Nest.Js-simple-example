@@ -2,27 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef94b95b-e11b-4388-a464-aeb3b91557a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/events/events.gateway.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/events/events.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/database.provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news/dto/news.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/dto/news.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news/news.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news/news.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news/news.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news/news.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/news.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/dto/ex-login.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/dto/ex-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/dto/ex-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/dto/auth-credential.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/get-user.decorator.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/jwt-payload.inteface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/jwt-payload.inteface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/jwt.strategy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/user.entity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/user.repository.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/user.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,6 +114,7 @@
       <workItem from="1571637240117" duration="4652000" />
       <workItem from="1571659145866" duration="12588000" />
       <workItem from="1571695490565" duration="41504000" />
+      <workItem from="1571791423467" duration="4070000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1571073825188</created>
@@ -149,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571606518844</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Чат&#10;- Новости&#10;- Пользователи&#10;- Настройки">
+      <created>1571791653719</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571791653719</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,16 +176,17 @@
     <MESSAGE value="install nest js" />
     <MESSAGE value="users, login" />
     <MESSAGE value="Base API methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base API methods" />
+    <MESSAGE value="- Чат&#10;- Новости&#10;- Пользователи&#10;- Настройки" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Чат&#10;- Новости&#10;- Пользователи&#10;- Настройки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/users/users.controller.ts</url>
-          <line>56</line>
+          <line>27</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="81" />
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

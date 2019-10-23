@@ -3,9 +3,15 @@ import { ExUserDto } from './dto/ex-user.dto';
 import {ExNewsDto} from "../news/dto/news.dto";
 import {News} from "../news/news.entity";
 import {UploadedFile} from "@nestjs/common";
+import {JwtPayload} from "./jwt-payload.inteface";
+import {JwtService} from "@nestjs/jwt";
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class UsersService {
 
+    constructor(
+        private readonly jwtService: JwtService){}
 
     static transformuser(usr:User): ExUserDto
     {
@@ -19,7 +25,7 @@ export class UsersService {
         exuser.id = usr.id;
         exuser.permission = JSON.parse(usr.permission);
         exuser.permissionId = usr.id;
-        exuser.access_token = "123";
+        exuser.access_token = "";
         return exuser;
     }
 
@@ -45,7 +51,14 @@ export class UsersService {
         //Сохраняем в строку и по умолчанию полные права
         user.permission = '{"chat":{"C":true,"R":true,"U":true,"D":true},"news":{"C":true,"R":true,"U":true,"D":true},"setting":{"C":true,"R":true,"U":true,"D":true}}';
         await user.save();
-        return UsersService.transformuser(user);
+        let euser:ExUserDto = UsersService.transformuser(user);
+
+        let username:string = user.username;
+        const payload: JwtPayload = { username };
+        const accessToken = await this.jwtService.sign(payload);
+        euser.access_token = accessToken;
+
+        return euser;
     }
 
     async login(exLoginDto: ExUserDto): Promise<any> {
@@ -68,7 +81,10 @@ export class UsersService {
 
         }
 
-        exLoginDto.access_token = "123";
+        let username:string = usr.username;
+        const payload: JwtPayload = { username };
+        const accessToken = await this.jwtService.sign(payload);
+        exLoginDto.access_token = accessToken;
 
         // Permission храним в string. Преобразуем в объект при чтении
         exLoginDto.permission = JSON.parse(exLoginDto.permission.toString());
@@ -107,7 +123,15 @@ export class UsersService {
         return UsersService.transformuser(user);
     }
 
-    async authFromToken(createLoginDto: ExUserDto) {
-        return undefined;
+    async authFromToken(createLoginDto: ExUserDto):Promise<ExUserDto> {
+
+        let id:number = createLoginDto.id;
+        let user:User = await User.findByPk(id);
+        let username:string = user.username;
+        const payload: JwtPayload = { username };
+        const accessToken = await this.jwtService.sign(payload);
+        createLoginDto.access_token = accessToken;
+        return createLoginDto;
+
     }
 }

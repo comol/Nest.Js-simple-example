@@ -33,7 +33,6 @@ export class UsersController {
         return  this.usersService.login(createLoginDto);
     }
 
-    //TODO разобраться с авторизацией
     @Post('authFromToken')
     async authFromToken(@Body() createLoginDto: ExUserDto): Promise<ExUserDto> {
         return  this.usersService.authFromToken(createLoginDto);
