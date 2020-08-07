@@ -33,7 +33,7 @@
     "@types/socket.io": "^2.1.4",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.10.2",
     "fix": "0.0.6",
     "passport": "^0.4.0",
